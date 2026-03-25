@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SIP Calculator India – Calculate Investment Returns</title>
+
+<meta name="description" content="Free SIP calculator to estimate your investment returns easily.">
+
+<style>
+body{
+font-family:Arial;
+background:#fafafa;
+text-align:center;
+padding:40px;
+}
+
+.box{
+background:white;
+padding:20px;
+max-width:300px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:90%;
+padding:8px;
+margin:5px;
+}
+
+button{
+padding:8px 15px;
+background:#2b7cff;
+color:white;
+border:none;
+border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>SIP Calculator</h1>
+
+<div class="box">
+
+<input type="number" id="monthly" placeholder="Monthly Investment (₹)"><br>
+<input type="number" id="rate" placeholder="Expected Return (%)"><br>
+<input type="number" id="years" placeholder="Years"><br>
+
+<button onclick="calcSIP()">Calculate</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function calcSIP(){
+let p = document.getElementById("monthly").value;
+let r = document.getElementById("rate").value / 100 / 12;
+let n = document.getElementById("years").value * 12;
+
+let future = p * ((Math.pow(1+r,n)-1)/r) * (1+r);
+
+document.getElementById("result").innerText =
+"Future Value: ₹ " + future.toFixed(0);
+}
+</script>
+
+</body>
+</html>
