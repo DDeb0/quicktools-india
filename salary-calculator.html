@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Salary Calculator India</title>
+
+<style>
+body{font-family:Arial;text-align:center;padding:40px;background:#fafafa;}
+.box{background:white;padding:20px;max-width:300px;margin:auto;border-radius:10px;}
+input{width:90%;padding:8px;margin:5px;}
+button{padding:8px 15px;background:#2b7cff;color:white;border:none;border-radius:5px;}
+</style>
+</head>
+
+<body>
+
+<h1>Salary Calculator (In-hand)</h1>
+
+<div class="box">
+
+<input type="number" id="ctc" placeholder="Annual CTC (₹)"><br>
+
+<button onclick="calcSalary()">Calculate</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function calcSalary(){
+let ctc = document.getElementById("ctc").value;
+
+// Rough estimate (70% take home)
+let monthly = (ctc * 0.7) / 12;
+
+document.getElementById("result").innerText =
+"Estimated Monthly In-hand: ₹ " + monthly.toFixed(0);
+}
+</script>
+
+</body>
+</html>
