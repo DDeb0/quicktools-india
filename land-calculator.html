@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Land Converter (Sq ft to Cent)</title>
+
+<style>
+body{font-family:Arial;text-align:center;padding:40px;background:#fafafa;}
+.box{background:white;padding:20px;max-width:300px;margin:auto;border-radius:10px;}
+input{width:90%;padding:8px;margin:5px;}
+button{padding:8px 15px;background:#2b7cff;color:white;border:none;border-radius:5px;}
+</style>
+</head>
+
+<body>
+
+<h1>Land Converter</h1>
+
+<div class="box">
+
+<input type="number" id="sqft" placeholder="Square Feet"><br>
+
+<button onclick="convert()">Convert</button>
+
+<p id="result"></p>
+
+<p style="font-size:12px;color:gray">1 cent = 435.6 sq ft</p>
+
+</div>
+
+<script>
+function convert(){
+let sqft = document.getElementById("sqft").value;
+let cent = sqft / 435.6;
+
+document.getElementById("result").innerText =
+"Cents: " + cent.toFixed(2);
+}
+</script>
+
+</body>
+</html>
