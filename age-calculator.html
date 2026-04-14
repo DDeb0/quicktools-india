@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Age Calculator</title>
+
+<style>
+body{font-family:Arial;text-align:center;padding:40px;background:#fafafa;}
+.box{background:white;padding:20px;max-width:300px;margin:auto;border-radius:10px;}
+input{width:90%;padding:8px;margin:5px;}
+button{padding:8px 15px;background:#2b7cff;color:white;border:none;border-radius:5px;}
+</style>
+</head>
+
+<body>
+
+<h1>Age Calculator</h1>
+
+<div class="box">
+
+<input type="number" id="day" placeholder="Day"><br>
+<input type="number" id="month" placeholder="Month"><br>
+<input type="number" id="year" placeholder="Year"><br>
+
+<button onclick="calcAge()">Calculate</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function calcAge(){
+let day = document.getElementById("day").value;
+let month = document.getElementById("month").value - 1;
+let year = document.getElementById("year").value;
+
+let birthdate = new Date(year, month, day);
+let today = new Date();
+
+let age = today.getFullYear() - birthdate.getFullYear();
+let m = today.getMonth() - birthdate.getMonth();
+
+if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())){
+age--;
+}
+
+document.getElementById("result").innerText =
+"Your Age: " + age + " years";
+}
+</script>
+
+</body>
+</html>
