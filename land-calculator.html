@@ -32,6 +32,16 @@ Useful for property, plots and real estate land conversion calculations.
 
 </div>
 
+<h2>Cent to Square Feet Converter</h2>
+
+<input type="number" id="centInput" placeholder="Enter cents"><br><br>
+
+<button onclick="convertCentToSqft()">Convert</button>
+
+<p id="centResult"></p>
+
+
+
 <script>
 function convert(){
 let sqft = document.getElementById("sqft").value;
@@ -39,6 +49,17 @@ let cent = sqft / 435.6;
 
 document.getElementById("result").innerText =
 "Cents: " + cent.toFixed(2);
+}
+
+function convertCentToSqft(){
+
+let cent = document.getElementById("centInput").value;
+
+let sqft = cent * 435.6;
+
+document.getElementById("centResult").innerText =
+"Square Feet: " + sqft.toFixed(2);
+
 }
 </script>
 
