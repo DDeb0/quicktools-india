@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>FD Calculator India</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+padding:40px;
+background:#fafafa;
+}
+
+.box{
+background:white;
+padding:20px;
+max-width:350px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:90%;
+padding:8px;
+margin:8px;
+}
+
+button{
+padding:8px 15px;
+background:#2b7cff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>FD Calculator India</h1>
+
+<p>
+Calculate fixed deposit maturity amount and interest instantly using this free FD calculator.
+</p>
+
+<div class="box">
+
+<input type="number" id="amount" placeholder="Deposit Amount">
+
+<input type="number" id="rate" placeholder="Interest Rate (%)">
+
+<input type="number" id="years" placeholder="Years">
+
+<button onclick="calculateFD()">Calculate</button>
+
+<p id="result"></p>
+
+</div>
+
+<h2>What is an FD?</h2>
+
+<p>
+Fixed Deposit (FD) is a savings investment offered by banks where money earns fixed interest over a chosen period.
+</p>
+
+<h2>How FD interest is calculated</h2>
+
+<p>
+FD maturity amount depends on deposit amount, interest rate and investment duration.
+</p>
+
+<script>
+
+function calculateFD(){
+
+let amount =
+document.getElementById("amount").value;
+
+let rate =
+document.getElementById("rate").value / 100;
+
+let years =
+document.getElementById("years").value;
+
+let maturity =
+amount * Math.pow((1 + rate), years);
+
+document.getElementById("result").innerText =
+"Maturity Amount: ₹ " + maturity.toFixed(2);
+
+}
+
+</script>
+
+</body>
+
+</html>
